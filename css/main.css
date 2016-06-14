@@ -130,13 +130,7 @@ li {
 	  -webkit-box-shadow: inset 0 0px 0px rgba(0, 0, 0, .075);
           box-shadow: inset 0 0px 0px rgba(0, 0, 0, .075);
 }
-.form-control{
-	border: #EBE8E8 1px solid !important;
-	width: 95% !important;
-	border-left: none !important;
-	  -webkit-box-shadow: inset 0 0px 0px rgba(0, 0, 0, .075);
-          box-shadow: inset 0 0px 0px rgba(0, 0, 0, .075);
-}
+
 .w-80 {
 	width: 20%;
 }
@@ -188,6 +182,9 @@ li {
 td {
 	padding-top: 10px;
 }
+.top{
+	margin-top: 5px !important;
+}
 .pt-5{
 	padding-top: 8px;
 }
@@ -196,6 +193,9 @@ td {
 }
 .dark-gray{
 	color: #777474;
+}
+.dark-white{
+	color: white;
 }
 .none{
 	text-decoration: none !important;

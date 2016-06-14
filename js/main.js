@@ -1,3 +1,5 @@
+
+//Funcion de busqueda
 function doSearch()
         {
             var tableReg = document.getElementById('datos');
@@ -9,7 +11,7 @@ function doSearch()
             // Recorremos todas las filas con contenido de la tabla
             for (var i = 1; i < tableReg.rows.length; i++)
             {
-                cellsOfRow = tableReg.rows[i].getElementsByTagName('b');
+                cellsOfRow = tableReg.rows[i].getElementsByTagName('b'); //La busqueda en solo nombres
                 found = false;
                 // Recorremos todas las celdas
                 for (var j = 0; j < cellsOfRow.length && !found; j++)
@@ -32,14 +34,33 @@ function doSearch()
             }
         }
 
-// var mensajes = [
-//     {
-//         mensaje:
 
-//     }
-// ];
+var foto = ["logocodeacademy.png", "raymi.jpg", 
+"mariana.jpg", "anamaria.jpg", "rodulfo.jpg",
+ "andrea.jpg", "mariapaula.jpg"];
+
+var nombre = ["Laboratoria Perú", "Raymi Saldomando", 
+"Mariana Costa", "Ana María Martinez", "Rodulfo Prieto", 
+"Andrea Lamas", "María Paula Rivarola"];
+
+$(".chat").click(function(){
+    var data = $(this).attr("data");
+    // var imagen ="image/"+foto[data];
+    $("#hablando").html('<img src="image/' + foto[data] + ' "class="img top">');
+    $("#titulo").html("<b>" + nombre[data] + "</b>");
 
 
+
+// var imagen = "fotos/" + imagenes[numeroAlAzar];
+//     $('#imagenPersona').attr('src', imagen) 
+//     $("a").click(function() {
+//       $("#imageBox").html("<img src=' + this.href + '>");
+// });
+});
+
+
+
+//funcion de creación de mensajes de conversación
 (function(){
     // Variables
     var lista = document.getElementById("lista"),

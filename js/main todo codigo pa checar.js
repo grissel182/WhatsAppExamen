@@ -1,3 +1,111 @@
+
+
+
+var mensajes = [
+  {
+    mensaje : 'Hola mundo',
+    persona : 'Jose Lopez',
+  },
+
+  {
+    mensaje : 'Hola',
+    persona : 'Andra Lamas'
+  },
+
+  {
+    mensaje : 'Irving',
+    persona : 'Andra Lamas'
+  },
+
+  {
+    mensaje : 'Contestame!!',
+    persona : 'Jose Lopez'
+  },
+
+  {
+    mensaje : '¿Me odias?',
+    persona : 'Jose Lopez'
+  },
+  
+];
+
+var conversacion = 'Andra Lamas';
+
+$(document).ready(function() {
+  console.log(':D');
+
+  for (var i =0; i< mensajes.length; i++){
+    var temp = mensajes[i];
+    
+    if (conversacion == temp.persona){
+        $('#contenedor').append(temp.persona);
+        $('#contenedor').append('<br>');
+        $('#contenedor').append(temp.mensaje);
+        $('#contenedor').append('<br><br><br>');
+    }
+
+    
+  }
+
+  $('#input').keypress(function(event){
+      //Si se presiono enter
+      var texto =  $('#input').val();
+      var quien = $('#caja').text();
+      var temp = {
+          mensaje : texto,
+          persona : quien
+      };
+
+      mensajes.push(temp);
+
+  });
+
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // // funcion para que al dar enter se ejecute
 // $(document).keypress(function(e){
 // 	if(e.which == 13)
