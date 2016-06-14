@@ -1,4 +1,5 @@
-
+var mensajes=[
+];
 //Funcion de busqueda
 function doSearch()
         {
@@ -43,19 +44,13 @@ var nombre = ["Laboratoria Perú", "Raymi Saldomando",
 "Mariana Costa", "Ana María Martinez", "Rodulfo Prieto", 
 "Andrea Lamas", "María Paula Rivarola"];
 
+// dar click y cambiar de imagen en el titular
 $(".chat").click(function(){
     var data = $(this).attr("data");
     // var imagen ="image/"+foto[data];
     $("#hablando").html('<img src="image/' + foto[data] + ' "class="img top">');
     $("#titulo").html("<b>" + nombre[data] + "</b>");
 
-
-
-// var imagen = "fotos/" + imagenes[numeroAlAzar];
-//     $('#imagenPersona').attr('src', imagen) 
-//     $("a").click(function() {
-//       $("#imageBox").html("<img src=' + this.href + '>");
-// });
 });
 
 
@@ -92,7 +87,7 @@ $(".chat").click(function(){
     
         lista.appendChild(nuevaTarea);
 
-        tareaInput.value = "";
+     
         contenedor.setAttribute("class", "mensaje-green"); //burbuja verde creada
         texto.setAttribute("class", "dark-gray", "mt-m");
 
@@ -100,7 +95,7 @@ $(".chat").click(function(){
     var comprobarInput = function(){
         tareaInput.className = "";
         tareaInput.setAttribute("placeholder", "Escribe tu mensaje aquí");
-        tareaInput.setAttribute("class", "form-control","inline", "escribe", "mt-5", "w-80");
+        tareaInput.setAttribute("class", "form-control-2","inline", "escribe", "mt-5", "w-80");
     };
 
     var eliminartarea = function(){
@@ -125,17 +120,32 @@ $(".chat").click(function(){
 	if(e.which == 13)
 	{
 		agregarTarea();
+        
         //pruebas de guardar
-        // var text = $("#tarea").val();
-        // var persona = $("#header").text();
-        // var temp = {
-        //     mensaje: ;
-        //     persona: ;
-        // };
-        // mensajes.push(temp;)
+        var text = $("#tarea").val();
+        var quien = $("#titulo").text();
+        var temp = {
+            mensaje: text,
+            persona: quien
+        };
+        mensajes.push(temp);
+        console.log(mensajes);
+        tareaInput.value = "";
 	}
 });
 
 }());
 
 
+// for (var i =0; i< mensajes.length; i++){
+//     var temp = mensajes[i];
+    
+//     if (conversacion == temp.persona){
+//         $('#contenedor').append(temp.persona);
+//         $('#contenedor').append('<br>');
+//         $('#contenedor').append(temp.mensaje);
+//         $('#contenedor').append('<br><br><br>');
+//     }
+
+    
+//   }
