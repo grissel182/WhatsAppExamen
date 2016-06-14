@@ -149,6 +149,77 @@
 // }());
 
 
+// (function(){
+//     var lista = document.getElementById("lista"), //ul donde van divs de mensaje
+//         tareaInput = document.getElementById("tarea"); //input de mensaje
+
+//     var agregarTarea = function(){
+//         var tarea = tareaInput.value,
+//             contenido = document.createTextNode(tarea),
+//             contenedor = document.createElement("div"),
+//             texto = document.createElement("p");
+//         if (tarea === "") {
+//             tareaInput.setAttribute("placeholder", "Escribe tu mensaje aquí");
+
+//             return false;
+//         }
+//         contenedor.setAttribute("class", "mensaje-green");
+//         texto.setAttribute("class", "dark-gray", "mt-m");
+//         texto.appendChild(contenido);
+
+//     };
+//     $(document).keypress(function(e){
+//         if(e.which == 13){
+//             agregarTarea();
+//         }
+//     });
+
+
+// }());
+
+
+
+
+// (function(){
+//     var lista = document.getElementById("lista"), //ul donde van divs de mensaje
+//         tareaInput = document.getElementById("tarea"); //input de mensaje
+
+//     var agregarTarea = function(){
+//         var tarea = tareaInput.value,
+//             contenido = document.createTextNode(tarea),
+//             contenedor = document.createElement("div"),
+//             texto = document.createElement("p");
+//         if (tarea === "") {
+//             tareaInput.setAttribute("placeholder", "Escribe tu mensaje aquí");
+
+//             return false;
+//         }
+//         contenedor.setAttribute("class", "mensaje-green");
+//         texto.setAttribute("class", "dark-gray", "mt-m");
+//         texto.appendChild(contenido);
+
+//     };
+//     $(document).keypress(function(e){
+//         if(e.which == 13){
+//             agregarTarea();
+//         }
+//     });
+
+
+// }());
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 (function(){
     // Variables

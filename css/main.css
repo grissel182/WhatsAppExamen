@@ -53,7 +53,7 @@
 	border-bottom: 1px solid #D4D3D3;
 }
 .msj-2{
-	width: 100% 
+	width: 100% ;
 }
 .mensaje{
 	border-radius: 5px;
@@ -130,6 +130,16 @@ li {
 	  -webkit-box-shadow: inset 0 0px 0px rgba(0, 0, 0, .075);
           box-shadow: inset 0 0px 0px rgba(0, 0, 0, .075);
 }
+.form-control{
+	border: #EBE8E8 1px solid !important;
+	width: 95% !important;
+	border-left: none !important;
+	  -webkit-box-shadow: inset 0 0px 0px rgba(0, 0, 0, .075);
+          box-shadow: inset 0 0px 0px rgba(0, 0, 0, .075);
+}
+.w-80 {
+	width: 20%;
+}
 .input-group{
 	padding: 8px 0 0 15px;
 }
@@ -148,6 +158,7 @@ li {
 	width: 40px;
 	height: 40px;
 	margin: 5px;
+	margin-top: 0px;
 }
 
 /*iconitos */
@@ -170,6 +181,12 @@ li {
 	margin-top: 10px;
 	margin-right: 15px;
 	font-size: 10px;
+	margin-left: 120px;
+	/*width: 20%;*/
+}
+/*tabla para panel izq*/
+td {
+	padding-top: 10px;
 }
 .pt-5{
 	padding-top: 8px;
