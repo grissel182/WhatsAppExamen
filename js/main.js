@@ -1,3 +1,4 @@
+//json vacio, se almacenaran los mensajes de manera temporal
 var mensajes=[
 ];
 //Funcion de busqueda
@@ -51,17 +52,11 @@ $(".chat").click(function(){
     // var imagen ="image/"+foto[data];
     $("#hablando").html('<img src="image/' + foto[data] + ' "class="img top">');
     $("#titulo").html("<b>" + nombre[data] + "</b>");
-
+    escribirChat();
 });
-
-
 
 // moment().format("HH:mm");  Dentro de el span que se cree con el msj, añadir
 // el moment.js//
-
-
-
-
 
 //funcion de creación de mensajes de conversación
 (function(){
@@ -77,10 +72,7 @@ $(".chat").click(function(){
             contenedor = document.createElement("div"),
             texto = document.createElement("p"),
             contenido = document.createTextNode(tarea),
-            hora = document.createElement("span"); //h
-// moment().format("HH:mm");  Dentro de el span que se cree con el msj, añadir
-// el moment.js//
-
+            hora = document.createElement("span"); 
 
         if (tarea === "") {
             tareaInput.setAttribute("placeholder", "Escribe tu mensaje aquí");
@@ -118,17 +110,7 @@ $(".chat").click(function(){
         var parent = this.parentElement;
         parent.parentElement.removeChild(parent);
     };
-    // tachado
-    function actualizar() {
-        var cbid = this.id.replace("cb", "");
-        var itemtext = document.getElementById("item"+ cbid);
-        if(this.checked){
-            itemtext.className="tachar";
-        }
-        else{
-            itemtext.className="none";
-        }
-    }
+    // 
     var total = 0;
     tareaInput.addEventListener("click", comprobarInput);
 
@@ -140,9 +122,12 @@ $(".chat").click(function(){
         //pruebas de guardar
         var text = $("#tarea").val();
         var quien = $("#titulo").text();
+        // guardar hora
+        var time = $(".ver").text();
         var temp = {
             mensaje: text,
-            persona: quien
+            persona: quien,
+            tiempo: time
         };
         mensajes.push(temp);
         console.log(mensajes);
@@ -151,17 +136,26 @@ $(".chat").click(function(){
 });
 
 }());
+//se reescriben los mensajes borrados, extraidos de memoria temporal, para visualizar la conversación
+var escribirChat = function(){
+    for (var i =0; i< mensajes.length; i++){
+    var temp = mensajes[i];
+    var contact = $("#titulo").text();
 
+    if (contact ==temp.persona){
+        var msjAnteriores = temp.mensaje;
+        var tiempoMsj = temp.tiempo;
+        var bloque = document.createElement("div");
+            interior = document.createTextNode(msjAnteriores);
+            hour = document.createElement("span");
+            minutos = document.createTextNode(tiempoMsj);
 
-// for (var i =0; i< mensajes.length; i++){
-//     var temp = mensajes[i];
-    
-//     if (conversacion == temp.persona){
-//         $('#contenedor').append(temp.persona);
-//         $('#contenedor').append('<br>');
-//         $('#contenedor').append(temp.mensaje);
-//         $('#contenedor').append('<br><br><br>');
-//     }
-
-    
-//   }
+        $(bloque).addClass("mensaje-green");
+        $(hour).addClass("time-2 dark-gray");
+        bloque.appendChild(interior);
+        bloque.appendChild(hour);
+        hour.appendChild(minutos);
+        $("#lista").append(bloque);
+        }
+    };
+};
