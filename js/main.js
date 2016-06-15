@@ -47,11 +47,19 @@ var nombre = ["Laboratoria Perú", "Raymi Saldomando",
 // dar click y cambiar de imagen en el titular
 $(".chat").click(function(){
     var data = $(this).attr("data");
+    $(".mensaje-green").remove();
     // var imagen ="image/"+foto[data];
     $("#hablando").html('<img src="image/' + foto[data] + ' "class="img top">');
     $("#titulo").html("<b>" + nombre[data] + "</b>");
 
 });
+
+
+
+// moment().format("HH:mm");  Dentro de el span que se cree con el msj, añadir
+// el moment.js//
+
+
 
 
 
@@ -66,9 +74,14 @@ $(".chat").click(function(){
             nuevaTarea = document.createElement("li"),
             enlace = document.createElement("P"),
             caja = document.createElement("span"),
-            contenedor = document.createElement ("div"),
+            contenedor = document.createElement("div"),
             texto = document.createElement("p"),
-            contenido = document.createTextNode(tarea);
+            contenido = document.createTextNode(tarea),
+            hora = document.createElement("span"); //h
+// moment().format("HH:mm");  Dentro de el span que se cree con el msj, añadir
+// el moment.js//
+
+
         if (tarea === "") {
             tareaInput.setAttribute("placeholder", "Escribe tu mensaje aquí");
 
@@ -80,6 +93,8 @@ $(".chat").click(function(){
         enlace.appendChild(caja);
         caja.appendChild(contenedor);
         contenedor.appendChild(texto);
+        contenedor.appendChild(hora);
+        hora.setAttribute("class", "ver");
         texto.appendChild(contenido);
         caja.innertext = "itemtext";
         //li
@@ -87,9 +102,10 @@ $(".chat").click(function(){
     
         lista.appendChild(nuevaTarea);
 
-     
+        
         contenedor.setAttribute("class", "mensaje-green"); //burbuja verde creada
         texto.setAttribute("class", "dark-gray", "mt-m");
+
 
     };
     var comprobarInput = function(){
@@ -120,7 +136,7 @@ $(".chat").click(function(){
 	if(e.which == 13)
 	{
 		agregarTarea();
-        
+        $(".ver").html('<span class="dark-gray time">' + moment().format("HH:mm") + "</span>");
         //pruebas de guardar
         var text = $("#tarea").val();
         var quien = $("#titulo").text();
