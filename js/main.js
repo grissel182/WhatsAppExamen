@@ -73,6 +73,7 @@ $(".chat").click(function(){
             texto = document.createElement("p"),
             contenido = document.createTextNode(tarea),
             hora = document.createElement("span"); 
+            hora.innerHTML = moment().format("HH:mm");
 
         if (tarea === "") {
             tareaInput.setAttribute("placeholder", "Escribe tu mensaje aquí");
@@ -86,7 +87,8 @@ $(".chat").click(function(){
         caja.appendChild(contenedor);
         contenedor.appendChild(texto);
         contenedor.appendChild(hora);
-        hora.setAttribute("class", "ver");
+        hora.setAttribute("class", "ver dark-gray time");
+        // dark-gray time
         texto.appendChild(contenido);
         caja.innertext = "itemtext";
         //li
@@ -118,7 +120,7 @@ $(".chat").click(function(){
 	if(e.which == 13)
 	{
 		agregarTarea();
-        $(".ver").html('<span class="dark-gray time">' + moment().format("HH:mm") + "</span>");
+        //$(".ver").html('<span class="dark-gray time">' + moment().format("HH:mm") + "</span>");
         //pruebas de guardar
         var text = $("#tarea").val();
         var quien = $("#titulo").text();
